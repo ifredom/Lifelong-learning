@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <button id="btn">click it</button>
+
+  <script>
+
+    var singleton = function (fn) {
+      var instance;
+
+      return function () {
+        if (!instance) {
+          instance = instance = fn.apply(this, arguments);
+        }
+        return instance;
+      };
+    };
+
+    var createMask = function () {
+      // 创建div元素
+      var mask = document.createElement('div');
+      // 设置样式
+      mask.style.position = 'fixed';
+      mask.style.top = '0';
+      mask.style.right = '0';
+      mask.style.bottom = '0';
+      mask.style.left = '0';
+      mask.style.zIndex = '100';
+      mask.style.backgroundColor = 'rgba(0,0,0,0.5)';
+      document.body.appendChild(mask);
+      // 单击隐藏遮罩层
+      mask.onclick = function () {
+        mask.style.display = 'none';
+      }
+
+      return mask;
+    };
+
+    var createLogin = function () {
+      // 创建div元素
+      var login = document.createElement('div');
+      // 设置样式
+      login.style.position = 'absolute';
+      login.style.top = '50%';
+      login.style.left = '50%';
+      login.style.width = '200px';
+      login.style.height = '200px';
+      login.style.backgroundColor = '#ccc';
+      login.style.border = '1px solid pink';
+      login.style.borderRadius = '6px';
+      login.style.textAlign = 'center';
+      login.style.lineHeight = '200px';
+      login.innerHTML = 'login it';
+      document.body.appendChild(login);
+      return login;
+    }
+
+    document.getElementById('btn').onclick = function () {
+      var oMask = singleton(createMask)();
+      oMask.style.display = 'block';
+      var oLogin = singleton(createLogin)();
+      oLogin.style.display = 'block';
+      var w = parseInt(oLogin.clientWidth);
+      var h = parseInt(oLogin.clientHeight);
+    }
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <button id="btn">click it</button>
+
+  <script>
+
+    // js
+    var createMask = (function () {
+      var mask;
+      return function () {
+        if (!mask) {
+          // 创建div元素
+          var mask = document.createElement('div');
+          // 设置样式
+          mask.style.position = 'fixed';
+          mask.style.top = '0';
+          mask.style.right = '0';
+          mask.style.bottom = '0';
+          mask.style.left = '0';
+          mask.style.backgroundColor = 'rgba(0,0,0,0.5)';
+          mask.style.display = 'none';
+          document.body.appendChild(mask);
+        }
+
+        return mask;
+      }
+    })();
+
+    document.getElementById('btn').onclick = function () {
+      var maskLayer = createMask();
+      var maskLayer2 = createMask();
+      console.log(maskLayer === maskLayer2);
+      maskLayer.style.display = 'block';
+    }
+  </script>
+
+</body>
+
+</html>
