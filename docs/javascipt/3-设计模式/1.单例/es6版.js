@@ -41,6 +41,7 @@ var x = SingletonA.getInstance();
 var y = SingletonA._instance;
 
 singleton.printInfo();
+console.log(singleton);
 console.log(x === y);
 
 var user = new User();
