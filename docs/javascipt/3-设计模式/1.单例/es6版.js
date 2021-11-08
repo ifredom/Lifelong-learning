@@ -11,9 +11,9 @@
 
 class SingletonA {
   static _instance;
-  isPlaying;
+  name;
   constructor() {
-    this.isPlaying = true;
+    this.name = "setting";
   }
 
   static getInstance() {
@@ -23,7 +23,7 @@ class SingletonA {
     return this._instance;
   }
   printInfo() {
-    console.log(`SingletonA 调用  ${this.isPlaying}`);
+    console.log(`SingletonA 调用  ${this.name}`);
   }
 }
 

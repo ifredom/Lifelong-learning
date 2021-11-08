@@ -10,7 +10,7 @@
  */
 
 function SingletonA() {
-  this.isPlaying = true;
+  this.name = "setting";
   this._instance = null;
 }
 SingletonA._instance = null;
@@ -22,7 +22,7 @@ SingletonA.getInstance = function () {
 };
 
 SingletonA.prototype.printInfo = function () {
-  console.log(`SingletonA 调用  ${this.isPlaying}`);
+  console.log(`SingletonA 调用  ${this.name}`);
 };
 
 // 调用
