@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BFC区域</title>
+  <style>
+    #app {}
+
+    .module {
+      height: 20px;
+    }
+
+    .module6 {
+      float: left;
+    }
+  </style>
+</head>
+打开浏览器通知台观看</br>
+对于 #app 节点，它的 BFC 区域包含3个div：module1，module2，module3。而每一个 module 的高度是20px，因此其高度为60px
+</br>
+</br>
+<div id="app">
+  <div class="module module1">module1</div>
+  <div class="module module2">module2</div>
+  <div class="module module3">module3</div>
+</div>
+</br>
+</br>
+对于 #app2 节点，它的 BFC 区域包含2个div：module1，module2。由于子元素 module6 使用float，float规则会创建一个独立的BFC。每一个 module
+的高度是20px，因此其高度为40px</br>
+对于 module6 节点，其内部只有一个nodeContent,只有这一个字符串，因此其高度为20px
+</br>
+</br>
+<div id="app2">
+  <div class="module module4">module1</div>
+  <div class="module module5">module2</div>
+  <div class="module module6">module3</div>
+</div>
+
+
+</br>
+</br>
+其实只要改变了文档流结构，也就新创建了一个BFC区域。
+</body>
+
+</html>

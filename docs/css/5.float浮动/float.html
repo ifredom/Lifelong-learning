@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>float排列</title>
+  <style>
+    .clearfix:after {
+      display: block;
+      content: "";
+      clear: both;
+    }
+
+    .box {
+      overflow: hidden;
+      width: 276px;
+      padding: 10px;
+      background-color: #ddd;
+      text-align: center;
+      position: relative;
+      font: 18px/1.2 "宋体";
+    }
+
+    .show-body {
+      border: 1px solid black;
+      border-radius: 5px;
+      padding: 5%;
+      background: pink;
+      position: relative;
+    }
+
+    .text {
+      float: left;
+      background-color: rgba(0, 255, 0, 0.6);
+      width: 150px
+    }
+
+    .sb {
+      background-color: rgba(255, 0, 0, 0.6);
+      width: 200px;
+      height: 50px;
+    }
+
+    .sb1 {
+      float: left;
+    }
+
+    .sb2 {
+      float: right;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="box">
+    对 sb1 节点设置 float:left
+    <div class="show-body">
+      <!-- 添加结构单元 -->
+      <div class="text">左浮动的测试文字</div>
+      <div class="sb">BFC</div>
+      <button class="reset">还原</button>
+      <!-- 添加结构单元结束 -->
+    </div>
+  </div>
+
+  </br>
+  </br>
+
+  <div class="box">
+    对 sb1 节点设置 float:left
+    <div class="show-body">
+      <!-- 添加结构单元 -->
+      <div class="text">左浮动的测试文字</div>
+      <div class="sb sb1">BFC</div>
+      <button class="reset">还原</button>
+      <!-- 添加结构单元结束 -->
+    </div>
+  </div>
+
+  </br>
+  </br>
+
+  <div class="box">
+    对 sb2 节点设置 float:left
+    <div class="show-body">
+      <!-- 添加结构单元 -->
+      <div class="text">左浮动的测试文字</div>
+      <div class="sb sb2">BFC</div>
+      <button class="reset">还原</button>
+      <!-- 添加结构单元结束 -->
+    </div>
+  </div>
+
+  </br>
+  </br>
+
+  <div>
+    <div>左浮动的测试文字</div>
+    <div>左浮动的测试文字</div>
+    <div>左浮动的测试文字</div>
+  </div>
+
+  </br>
+  </br>
+
+  <div>
+    <div class="text">左浮动的测试文字</div>
+    <div class="text">左浮动的测试文字</div>
+    <div class="text">左浮动的测试文字</div>
+  </div>
+
+  </br>
+  </br>
+
+  <div class="clearfix">
+    <div class="text">左浮动的测试文字,有高度</div>
+    <div class="text">左浮动的测试文字</div>
+    <div class="text">左浮动的测试文字</div>
+  </div>
+
+
+
+</body>
+
+</html>
