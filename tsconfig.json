@@ -12,5 +12,6 @@
     "forceConsistentCasingInFileNames": true /* Disallow inconsistently-cased references to the same file. */
   },
   "exclude": ["node_modules"],
-  "include": ["docs/javascipt/7-typescript/**/*"]
+  "include": ["docs/javascipt/7-typescript/**/*"],
+  "plugins": ["@typescript-eslint"]
 }
