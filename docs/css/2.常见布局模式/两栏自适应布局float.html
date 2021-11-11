@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>两栏自适应布局float</title>
+  <style>
+    body {
+      padding: 20px;
+    }
+
+    .content {
+      margin: 20px auto;
+      width: 100%;
+      background-color: #ccc;
+    }
+
+    .float-left {
+      float: left;
+      width: 200px;
+      background-color: pink;
+    }
+
+    .right {
+      overflow: hidden;
+      background-color: greenyellow;
+    }
+
+    .float-right {
+      float: right;
+      width: 200px;
+      background-color: pink;
+    }
+  </style>
+</head>
+
+<body>
+  固定区域在左侧 使用float:left;
+  <main class="content">
+    <div class="float-left">
+      <p>left</p>
+    </div>
+    <div class="right">
+      <p>right</p>
+      <p>right</p>
+    </div>
+  </main>
+
+  固定区域在右侧 使用float:right;
+  <main class="content">
+    <div class="float-right">
+      <p>left</p>
+    </div>
+    <div class="right">
+      <p>right</p>
+      <p>right</p>
+    </div>
+
+  </main>
+
+</body>
+
+</html>

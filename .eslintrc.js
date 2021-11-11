@@ -8,5 +8,4 @@ module.exports = {
     ecmaVersion: 2020,
   },
   plugins: ["@typescript-eslint"],
-  excludes: ["*/*.html"],
 };
