@@ -13,3 +13,6 @@ var nums = [2, 5, 5, 11];
 var target = 10;
 var pos = twoSum(nums, target);
 console.log(pos);
+
+// https://zhuanlan.zhihu.com/p/88872395
+// https://leetcode-cn.com/problems/two-sum/solution/js-by-leetcode-solution/
