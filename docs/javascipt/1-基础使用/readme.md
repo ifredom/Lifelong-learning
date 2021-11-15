@@ -23,3 +23,5 @@ null == undefined             // true
 
 - Symbol 不可使用 new 显式包装该对象 。比如，这是错误得：`new Symbol("hello symbol");`对于其他得基本类型，由于历史原型可是用 new Boolean、new String 以及 new Number 创建得.
 - 创建全局共享对象，Symbol.for(key) 和 Symbol.keyFor(sym)。 默认先从全局进行索引，找到则返回，没找到则创建
+
+## [Map 和 Objets 区别](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Map)
