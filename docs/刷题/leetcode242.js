@@ -1,4 +1,7 @@
 // 242. 有效的字母异位词
+
+// 方法二：
+// Time complexity: O(2n+logn)
 var isAnagram = function (s, t) {
   var arr = s.split("");
   var arr2 = t.split("");
@@ -36,6 +39,9 @@ var s = "anagram",
 var isAn = isAnagram(s, t);
 console.log(isAn);
 
+// 方法二：
+// Time complexity: O(nlogn)
+// Space complexity: O(logn)
 var isAnagram2 = function (s, t) {
   return (
     s.length === t.length && [...s].sort().join("") === [...t].sort().join("")
@@ -43,3 +49,27 @@ var isAnagram2 = function (s, t) {
 };
 var isAn2 = isAnagram2(s, t);
 console.log(isAn2);
+
+// 方法三： 最佳  一遍哈希表
+// Time complexity: O(n)
+// Space complexity: O(logn)
+// s负责加，t负责减
+var isAnagram3 = function (s, t) {
+  if (s.length !== t.length) {
+    return false;
+  }
+  var strArr = new Array(26).fill(0);
+  for (let i = 0; i < s.length; i++) {
+    strArr[s[i].codePointAt(0) - "a".codePointAt(0)]++;
+  }
+  for (let j = 0; j < t.length; j++) {
+    strArr[t[j].codePointAt(0) - "a".codePointAt(0)]--;
+    if (strArr[t[j].codePointAt(0) - "a".codePointAt(0)] < 0) {
+      return false;
+    }
+  }
+  return true;
+};
+
+var isAn3 = isAnagram3(s, t);
+console.log(isAn3);
