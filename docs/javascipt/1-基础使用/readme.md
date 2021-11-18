@@ -25,3 +25,4 @@ null == undefined             // true
 - 创建全局共享对象，Symbol.for(key) 和 Symbol.keyFor(sym)。 默认先从全局进行索引，找到则返回，没找到则创建
 
 ## [Map 和 Objets 区别](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Map)
+

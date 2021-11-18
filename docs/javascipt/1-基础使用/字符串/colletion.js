@@ -14,4 +14,8 @@ for (let key of mySet1.keys()) {
 
 // 模拟求交集
 
+[...mySet1].filter((item) => mySet2.has(item));
+
 //  模拟求差集
+
+[...mySet1].filter((item) => !mySet2.has(item));
