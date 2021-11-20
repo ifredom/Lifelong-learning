@@ -27,3 +27,13 @@ console.log(typeof v);
 
 var x = Object.prototype.toString.call("");
 console.log(x);
+
+function shift(params) {}
+console.log(typeof "123");
+console.log(typeof 123);
+console.log(typeof { name: "ifredom" });
+console.log(typeof [1, 2, 3]);
+console.log(typeof shift);
+console.log(typeof undefined);
+console.log(typeof null);
+console.log(typeof a === "undefined");
