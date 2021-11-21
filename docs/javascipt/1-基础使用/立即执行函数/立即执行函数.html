@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  https://blog.csdn.net/csdn_yudong/article/details/77431106
+
+  js解析器对 申明函数 和函数表达式 处理方式不同
+  <ul>
+    <li>申明函数 不可以立即执行 </li>
+    <li>函数表达式可以立即执行 fn()</li>
+  </ul>
+
+  <script>
+    function fn(a) {
+      console.log(a);
+    } ('123');
+    !function fn(a) {
+      console.log(a);
+    }('456');
+
+    !(a) { console.log(a); } ('123');
+  </script>
+</body>
+
+</html>
