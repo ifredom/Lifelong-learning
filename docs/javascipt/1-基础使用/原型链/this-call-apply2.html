@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>call</title>
+</head>
+
+<body>
+  call、apply 使用空间
+  1. 没有但是又想借用一下某个功能
+
+
+  拓展 Array.prototype.slice() 可以将类数组转换为一个新数组
+  https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/slice
+  https://segmentfault.com/a/1190000016286558
+
+  function list() {
+  return Array.prototype.slice.call(arguments); // 或者 [].slice.call(arguments)
+  }
+
+  var list1 = list(1, 2, 3); // [1, 2, 3]
+  <ul>
+    <li>x</li>
+    <li>a</li>
+    <li>c</li>
+  </ul>
+  <script>
+
+    var forEach = Function.prototype.call.bind(Array.prototype.forEach);
+
+    var DOMElementList = document.getElementsByTagName("li");
+
+    forEach(DOMElementList, function (el) {
+      el.addEventListener('click', handle);   //handle定义省略
+    });
+
+    [].slice.call(DOMElementList).forEach(function (el, index) {
+      el.addEventListener('click', handle);   //handle定义省略
+    })
+
+
+    function Animal() {
+      this.name = "animal"
+    }
+    Animal.prototype.eatFood = function () {
+      console.log(this.name + ' is eating food');
+    }
+    Animal.prototype.drink = function (water) {
+      console.log(this.name + ' is drinking ', water);
+    }
+
+    function Cat() {
+      this.name = "cat"
+    }
+    var cat = new Cat();
+    // cat 没有 eatFood 的方法，但是又想用一下这个方法
+    Animal.prototype.eatFood.call(cat);
+    // cat 没有 drink 的方法，但是又想用一下这个方法
+    Animal.prototype.drink.call(cat, 'milk');
+
+
+    //自定义typeof函数（注意，系统自带的typeof是运算符，不是函数）
+    function typeOf(o) {
+      return Object.prototype.toString.call(o).slice(8, -1);
+    }
+    //自定义typeOf函数测试
+    console.log(typeOf(2.1));  //Number
+    console.log(typeOf(undefined));  //Undefined
+    console.log(typeOf({}));  //Object
+    console.log(typeOf("hello"));  //String
+    console.log(typeOf(false));  //Boolean
+    console.log(typeOf(typeOf));  //Function
+    console.log(typeOf(null));  //Null
+    console.log(typeOf([]));  //Array
+    console.log(typeOf(new Date));  //Date
+    console.log(typeOf(/\d/));  //RegExp
+    console.log(typeOf(document.getElementsByTagName('body')[0]));  //HTMLBodyElement
+  </script>
+</body>
+
+</html>

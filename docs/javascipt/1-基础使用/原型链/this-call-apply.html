@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  /**
+  * 下面的代码中，函数体里面使用了变量x。该变量由运行环境提供。
+  * 现在问题就来了，由于函数可以在不同的运行环境执行，所以需要有一种机制，能够在函数体内部获得当前的运行环境（context）。
+  * 所以，this就出现了，它的设计目的就是在函数体内部，指代函数当前的运行环境。
+  * bind call和apply方法
+
+  1. 使用bind()修改一个对象的this。如果 bind 函数的参数列表为空，或者thisArg是null或undefined，执行作用域的 this 将被视为新函数的
+  thisArg.如果判断不清楚，则打印一下当前的this，该对象的this指向打印结果
+  */
+
+  <script>
+    var age = "ifredom";
+
+    var o = {
+      name: "Lily",
+      age: 18,
+      gender: "F",
+      speak: function () {
+        console.log('age: ', this.age);
+        return function () {
+          console.log(this);
+          console.log(this.age);
+        };
+      },
+    };
+
+
+    // 使用bind()修改speak的this指向
+    var x = o.speak.bind(null);
+    var y = o.speak().bind(o);
+
+    x();
+
+    o.speak()();
+    y();
+
+    // 同样的函数体，不同的this指向
+    console.log(o.speak());
+    console.log(y);
+
+
+  </script>
+</body>
+
+</html>
