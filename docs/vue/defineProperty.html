@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>defineProperty</title>
+</head>
+
+<body>
+
+  <div id="app">默认内容</div>
+  <input id="input" type="text" />
+  <script>
+    var app = document.querySelector("#app");
+    var input = document.querySelector("#input");
+    console.log(app);
+    console.log(app.innerHTML);
+    var vm = {
+      text: ""
+    };
+
+    Object.defineProperty(vm, "text", {
+      enumerable: false,
+      configurable: false,
+      set: function (newVal) {
+        app.textContent = newVal;
+        return newVal;
+      },
+      get: function () {
+        return vm.text
+      }
+    })
+
+    // 步骤一： 将dom值与代理对象绑定，一旦代理对象更改，那么dom数值更改
+    setTimeout(() => {
+      vm.text = "1秒后的内容";
+    }, 1000);
+
+    // 步骤二： 通过input控制
+    input.addEventListener('input', updateValue);
+    function updateValue(e) {
+      vm.text = 'input输入的内容：' + e.srcElement.value;
+    }
+  </script>
+</body>
+
+</html>

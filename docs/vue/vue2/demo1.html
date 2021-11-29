@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>vue-demo1</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+</head>
+
+<body>
+  <ul>
+    <li>1. 将一个普通的 JavaScript 对象传递给 Vue 实例的dataOptions，Vue 会遍历这个对象的所有属性，并使用Object.defineProperty将这些属性转为 getTer/setter。
+    </li>
+    <li>2. Object.defineProperty 只支持 ES5，不能做 SHIM 特性，所以 VUE 不支持 IE8 及更低版本的浏览器。</li>
+    <li>3. 用户看不到 Getter/Setter，但在内部它们使 VUE 跟踪依赖项，在访问和修改属性时通知更改。</li>
+    <li>4. 每个组件实例都有一个对应的Watcher实例对象，它在组件渲染时将属性记录记录为依赖，然后依赖setterNotify watcherRecalculate，从而导致其关联的组件被更新。</li>
+  </ul>
+
+  <h2>检验第3条,依赖跟踪初始化时，只对data上已有的属性进行监听，添加依赖</h2>
+  <div id="app">
+
+    <div>{{name}}</div>
+    <div>{{girls}}</div>
+    <div>{{age}}</div>
+    <div>{{country}}</div>
+  </div>
+  <script>
+    var vm = new Vue({
+      el: "#app",
+      data() {
+        return {
+          name: "hello",
+          girls: {
+            characteristic: "大长腿",
+            country: "american"
+          }
+        }
+      }
+    })
+    // 修改
+    setTimeout(() => {
+      vm.name = "data已有属性，1秒后的name值：√√√√√√√";
+    }, 1000);
+
+
+    // 添加
+    Vue.set(vm.girls, "language", "French");
+    // 修改
+    setTimeout(() => {
+      vm.girls.language = "新增属性，1秒后的值:  √√√√√√√";
+    }, 1000);
+
+
+    // 错误××× 避免直接在root实例上添加属性
+    // 添加
+    vm.age = "18";
+    // // 修改
+    setTimeout(() => {
+      vm.age = "新增属性，1秒后的值: 999";
+    }, 1000);
+
+
+    // 错误××× 使用Vue.set()也应该 避免直接在root实例上添加属性
+    // 添加
+    Vue.set(vm, "country", "France");
+    // 修改
+    setTimeout(() => {
+      vm.country = "新增属性，1秒后的值:   -----";
+    }, 1000);
+
+  </script>
+</body>
+
+</html>
