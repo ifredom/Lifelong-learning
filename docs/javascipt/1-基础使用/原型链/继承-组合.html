@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>组合式继承</title>
+</head>
+
+<body>
+  原型链继承，需要纠正constructor
+  <script>
+
+    function Box(age) {
+      this.names = ['lucy', 'tom'];
+      this.age = age;
+
+      this.getFirstName = function () {
+        return this.names[0];
+      }
+    }
+    Box.prototype.getNames = function () {
+      console.log(this.names);
+    }
+
+    function Rectangle(age, grade) {
+      Box.call(this, age)
+      this.grade = grade
+    }
+
+    Rectangle.prototype = new Box();// 原型链继承，创建子类会执行一次
+    Rectangle.prototype.construcor = Rectangle;// 纠正
+
+
+    var rectangle = new Rectangle(23, "3年级");
+    rectangle.names.push("jack")
+
+    console.log(rectangle);
+    console.log(rectangle.names);
+    console.log(rectangle.getFirstName());
+    rectangle.getNames();
+    console.log(rectangle.grade);
+
+
+    var rectangle2 = new Rectangle(18, "2年级");
+
+    console.log(rectangle2);
+    console.log(rectangle2.names);
+    console.log(rectangle2.getFirstName());
+    rectangle2.getNames();
+    console.log(rectangle2.grade);
+
+  </script>
+</body>
+
+</html>

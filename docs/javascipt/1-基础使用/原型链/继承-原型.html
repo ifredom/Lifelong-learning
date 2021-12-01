@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>原型继承</title>
+</head>
+
+<body>
+  Create()时一种方法，ES6规范了原型链继承 使用: var clone = Object.create(target)
+  <script>
+
+    function Create(o) {
+      function F() { };
+      F.prototype = o;
+      return new F();
+    }
+
+    function Box(age) {
+      this.names = ['lucy', 'tom'];
+      this.age = age;
+
+      this.getFirstName = function () {
+        return this.names[0];
+      }
+    }
+    Box.prototype.getNames = function () {
+      console.log(this.names);
+    }
+
+    var rectangle = Create(new Box(23));
+
+    console.log(rectangle);
+
+    rectangle.names.push("jack")
+
+    console.log(rectangle.names);
+    console.log(rectangle.age);
+    console.log(rectangle.getFirstName());
+    rectangle.getNames();
+
+    var clone = Object.create(new Box(23))
+
+    console.log(clone);
+
+    clone.names.push("jack")
+
+    console.log(clone.names);
+    console.log(clone.age);
+    console.log(clone.getFirstName());
+    clone.getNames();
+
+  </script>
+</body>
+
+</html>

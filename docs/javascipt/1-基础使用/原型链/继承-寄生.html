@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>寄生继承</title>
+</head>
+
+<body>
+  // 缺陷: 无法函数复用，每一次都会构造
+  <script>
+
+    function Create(o) {
+      function F() { };
+      F.prototype = o;
+      return new F();
+    }
+    function CreateAnother(original) {
+      var clone = Create(original);
+      clone.sayHi = function () {
+        console.log("hello");
+      }
+      return clone
+    }
+
+    function Box(age) {
+      this.names = ['lucy', 'tom'];
+      this.age = age;
+
+      this.getFirstName = function () {
+        return this.names[0];
+      }
+    }
+    Box.prototype.getNames = function () {
+      console.log(this.names);
+    }
+
+    var rectangle = CreateAnother(new Box(23));
+
+    console.log(rectangle);
+    rectangle.sayHi();
+    console.log(rectangle.age);
+
+
+  </script>
+</body>
+
+</html>
