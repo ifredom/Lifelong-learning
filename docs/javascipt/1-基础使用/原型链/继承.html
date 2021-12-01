@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+
+    // 使用proxy 实现一个 myExtends()
+
+    function myExtends(sup, base) {
+      var descriptor = Object.getOwnPropertyDescriptor(
+        base.prototype,
+        "constructor"
+      );
+
+      base.prototype = Object.create(sup.prototype);
+      var handle = {
+        construct: function (target, args) {
+          var obj = Object.create(base.prototype);
+          this.apply(target, obj, args);
+          return obj;
+        },
+        apply: function (target, thisArg, argumentsList) {
+          sup.apply(thisArg, argumentsList);
+          base.apply(thisArg, argumentsList);
+        }
+      };
+      var proxy = new Proxy(base, handle)
+
+      descriptor.value = proxy;
+      Object.defineProperty(base.prototype, "constructor", descriptor);
+
+      return proxy;
+    }
+
+    var Box = function (name) {
+      this.name = name;
+    };
+
+    var ModuleA = myExtends(Box, function (name, age) {
+      this.age = age;
+    });
+
+    var moduleA = new ModuleA("tom", 30);
+
+    console.log(moduleA);
+
+  </script>
+</body>
+
+</html>
