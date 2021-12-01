@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>寄生组合式继承</title>
+</head>
+
+<body>
+  <script>
+
+    function Box(age) {
+      this.names = ['lucy', 'tom'];
+      this.age = age;
+
+      this.getName = function () {
+        return this.names;
+      }
+    }
+    function Rectangle(age) {
+      Box.call(this, age)
+    }
+
+
+
+    var rectangle = new Rectangle(23);
+    var rectangle2 = new Rectangle(28);
+    rectangle.names.push('ifredom')
+
+    console.log(rectangle);
+    console.log(rectangle.names);
+    console.log(rectangle.age);
+
+
+    console.log(rectangle2);
+    console.log(rectangle2.names);
+    console.log(rectangle2.age);
+
+  </script>
+</body>
+
+</html>

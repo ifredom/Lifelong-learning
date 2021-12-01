@@ -1,8 +1,8 @@
+import { extend } from "@vue/shared";
 import { createApp } from "vue";
+import { Module } from "webpack";
 import App from "./App.vue";
-import "./proxy";
+
 createApp(App).mount("#app");
 
-function Tree(name) {
-  this.name = name;
-}
+

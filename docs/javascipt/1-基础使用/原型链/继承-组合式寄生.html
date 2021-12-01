@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>寄生继承</title>
+</head>
+
+<body>
+  // 寄生组合继承的高效率在于它只调用了一次超类构造函数，同时还能够保持原型链不变，能够正常使用 instanceof 和 isPrototypeOf() 寄生组合继承被普遍认为是引用类型最理想的继承方式
+  <script>
+
+    function Create(o) {
+      function F() { };
+      F.prototype = o;
+      return new F();
+    }
+    function inherit(subClass, superClass) {
+      var parent = Create(superClass.prototype); // 原型继承
+      parent.constructor = superClass;
+      subClass.prototype = parent;
+    }
+
+    function Box(name, age) {
+      this.name = name;
+      this.age = age;
+    }
+    Box.prototype.getName = function () {
+      console.log(this.name);
+    }
+
+    function Rectangle(name, age, size) {
+      Box.call(this, name, age);
+      this.size = size
+    }
+
+    inherit(Rectangle, Box);
+
+    var rectangle = new Rectangle("boxname", 23, 5);
+
+    console.log(rectangle.name);
+    console.log(rectangle.age);
+    console.log(rectangle.size);
+
+  </script>
+</body>
+
+</html>

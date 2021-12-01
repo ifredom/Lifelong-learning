@@ -7,6 +7,20 @@
 - 3、引用类型，隐式原型 **proto**  的属性值指向它的构造函数的显式原型 prototype 属性值。
 - 4、当你试图得到一个对象的某个属性时，如果这个对象本身没有这个属性，那么它会去它的隐式原型 **proto** 中寻找。
 
+### instanceof
+
+> instanceof 是用来判断 A 是否为 B 的实例
+
+核心就是理解这一行
+
+```js
+function Parent() {}
+Parent.prototype.__proto__ === Object.prototype;
+```
+
+- prototype: 原型，是一个包含 get 和 set 得属性访问器
+- **proto**: 隐式原型，指向其实体对象原型 标准中已经废弃，避免使用
+
 ## 类型检测
 
 > 使用 instanceof 检测 自定义类型:
@@ -71,19 +85,10 @@ typeof null; // object
 - 3.对于 null ，返回 object 类型。
 - 4.对于 function 返回 function 类型。
 
-### instanceof
-
-> instanceof 是用来判断 A 是否为 B 的实例
-
-核心就是理解这一行
-
-```js
-function Parent() {}
-Parent.prototype.__proto__ === Object.prototype;
-```
-
 ### 拓展阅读资料
 
 [the difference between typeof and instanceof and when should one be used vs. the other?](https://stackoverflow.com/questions/899574/what-is-the-difference-between-typeof-and-instanceof-and-when-should-one-be-used)
 
-[](http://jartto.wang/2019/01/17/js-typeof/)
+[typeof 和 instanceof](http://jartto.wang/2019/01/17/js-typeof/)
+
+[javascript实现继承的七种方式](https://juejin.cn/post/6844904161071333384)
