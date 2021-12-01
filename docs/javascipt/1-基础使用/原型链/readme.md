@@ -89,4 +89,6 @@ typeof null; // object
 
 [the difference between typeof and instanceof and when should one be used vs. the other?](https://stackoverflow.com/questions/899574/what-is-the-difference-between-typeof-and-instanceof-and-when-should-one-be-used)
 
-[](http://jartto.wang/2019/01/17/js-typeof/)
+[typeof 和 instanceof](http://jartto.wang/2019/01/17/js-typeof/)
+
+[javascript实现继承的七种方式](https://juejin.cn/post/6844904161071333384)
