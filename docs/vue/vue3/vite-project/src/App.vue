@@ -1,7 +1,10 @@
 <script setup></script>
 
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
+  <div>
+    <img alt="Vue logo" src="./assets/logo.png" />
+    <div id="content">content</div>
+  </div>
 </template>
 
 <style>
