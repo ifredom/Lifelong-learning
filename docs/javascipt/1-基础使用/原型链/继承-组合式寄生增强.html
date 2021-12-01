@@ -18,14 +18,14 @@
       return new F();
     }
     function inherit(subClass, superClass) {
-      let obj = superClass.prototype;
-      obj.constructor = subClass;
+      let prototype  = superClass.prototype; //创建对象
+      prototype.constructor = subClass; //增强对象
       for (let key in subClass.prototype) {
-        Object.defineProperty(obj, key, {
+        Object.defineProperty(prototype, key, {
           value: subClass.prototype[key]
         })
       }
-      subClass.prototype = obj;
+      subClass.prototype = prototype;
     }
 
     function Box(name, age) {

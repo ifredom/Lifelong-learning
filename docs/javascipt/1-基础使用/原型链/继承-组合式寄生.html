@@ -18,9 +18,9 @@
       return new F();
     }
     function inherit(subClass, superClass) {
-      var parent = Create(superClass.prototype); // 原型继承
-      parent.constructor = superClass;
-      subClass.prototype = parent;
+      var cloneSuperClass = Create(superClass.prototype); // 原型继承
+      cloneSuperClass.constructor = superClass;
+      subClass.prototype = cloneSuperClass; //指定对象
     }
 
     function Box(name, age) {
