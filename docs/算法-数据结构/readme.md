@@ -1,6 +1,10 @@
 # 算法
 
-> [JavaScript 算法与数据结构](https://github.com/trekhleb/javascript-algorithms/blob/master/README.zh-CN.md) > [数据结构-B 站视频](// https://www.bilibili.com/video/BV1yD4y127vy?p=13&spm_id_from=pageDriver)
+> [JavaScript 算法与数据结构](https://github.com/trekhleb/javascript-algorithms/blob/master/README.zh-CN.md)
+>
+> [数据结构-视频](// https://www.bilibili.com/video/BV1yD4y127vy?p=13&spm_id_from=pageDriver)
+>
+> [追风逐月](https://www.cnblogs.com/xbblogs/category/728023.html)
 > 算法是如何解决一类问题的明确规范。算法是一组精确定义操作序列的规则。
 
 ## 哈希
