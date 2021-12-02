@@ -1,5 +1,6 @@
 /**
- * Queue队列
+ * ! Queue队列
+ * * 具象：排队购物，先排队的人先买到，后排的人后买到
  * ? 先进先出 FIFO (first in, first out)的示意
  * enqueue(element):向队列尾部添加一个（或是多个）元素。
  * dequeue():移除队列的第一个元素，并返回被移除的元素。

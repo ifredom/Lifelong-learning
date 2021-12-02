@@ -1,6 +1,7 @@
 /**
- * Stack栈
- * ? 后进先出 LIFO (last in, first out)的示意
+ * !Stack栈
+ * * 具象：叠罗汉，先叠的人起不来，后叠的人先起来
+ * ? 后进先出 LIFO (last in, first out)
  * push(element):添加一个或是几个新元素到栈顶。
  * pop():移除栈顶的元素，同时返回被移除元素。
  * peek():返回栈顶的元素，但并不对栈顶的元素做出任何的修改。
@@ -46,3 +47,12 @@ stack.push(1);
 stack.push(3);
 stack.push(5);
 stack.print();
+
+// 测试题：
+/**
+ * 有六个元素 A,B,C,D,E,F，哪一种不是一个合法的出栈队列(C)
+ * A. B,C,D,A,F,E
+ * B. C,B,D,E,F,A
+ * C. D,C,A,B,E,F
+ * D. E,D,C,F,B,A
+ */
