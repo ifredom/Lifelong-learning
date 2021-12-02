@@ -56,3 +56,24 @@ stack.print();
  * C. D,C,A,B,E,F
  * D. E,D,C,F,B,A
  */
+
+// 应用题：十进制转换成二进制
+
+function dec2bin(decNumber) {
+  var stack = new Stack();
+
+  while (decNumber > 0) {
+    stack.push(decNumber % 2);
+    decNumber = Math.floor(decNumber / 2);
+  }
+  var binaryString = "";
+  while (!stack.isEmpty()) {
+    var node = stack.pop();
+    binaryString += node;
+  }
+  return binaryString;
+}
+
+console.log(dec2bin(10));
+console.log(dec2bin(100));
+console.log(dec2bin(1000));
