@@ -33,11 +33,13 @@ class Queue {
   }
 }
 
-var queue = new Queue();
-queue.enqueue(1);
-queue.enqueue(3);
-queue.enqueue(5);
+/**
+ * 测试题：击鼓传花
+ * 几个人围成一圈，从某一个人开始数数，，数到指定数字的人被淘汰。
+ * 接下来又下一个人继续从头开始数数，直到最后一人胜出
+ * 问：最终胜利的那个人是谁
+ */
 
-queue.dequeue();
-
-queue.print();
+/**
+ * *应用：广度优先搜索算法
+ */

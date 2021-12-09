@@ -48,8 +48,8 @@ stack.push(3);
 stack.push(5);
 stack.print();
 
-// 测试题：
 /**
+ * 测试题：
  * 有六个元素 A,B,C,D,E,F，哪一种不是一个合法的出栈队列(C)
  * A. B,C,D,A,F,E
  * B. C,B,D,E,F,A
@@ -77,3 +77,11 @@ function dec2bin(decNumber) {
 console.log(dec2bin(10));
 console.log(dec2bin(100));
 console.log(dec2bin(1000));
+
+/**
+ * *应用示例 :深度优先搜索算法
+ * （ AB（ C（ DE） F）（ G（（ H） I J） K）） 这一串字符中括号的处理方式
+如下：首先从左边开始读取字符，读到左括号就将其入栈，读到右括号就将栈顶的左括
+号出栈。此时，出栈的左括号便与当前读取的右括号相匹配。通过这种处理方式，我们
+就能得知配对括号的具体位置。
+ */
