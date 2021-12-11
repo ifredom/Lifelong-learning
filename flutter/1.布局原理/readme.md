@@ -43,4 +43,4 @@ defunct,
 
 ## [InheritedWidget](https://www.youtube.com/watch?v=Zbm3hjPjQMk)
 
-位于 widget 树顶层，当在多个 statefulWidget 之间数据传递时，可以用它
+位于 widget 树顶层，当在多个 statefulWidget 之间数据传递时，可以[用它](https://api.flutter-io.cn/flutter/widgets/InheritedWidget-class.html)
