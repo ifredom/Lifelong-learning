@@ -41,14 +41,14 @@ class Linked {
     this.length++;
     return true;
   }
-  // 头插法>
+  // 头插法>倒序
   insertNodeByHead(value) {
     const node = new Node(value);
     node.next = this.head.next;
     this.head.next = node;
     this.length++;
   }
-  // 尾插法>
+  // 尾插法>顺序
   insertNodeByTail(value) {
     const node = new Node(value);
     // 将尾指针的 next 指向被插入的节点
