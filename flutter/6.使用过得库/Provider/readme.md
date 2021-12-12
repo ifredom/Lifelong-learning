@@ -82,10 +82,16 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
           },
           Selector<HomeModelProvider, int>(
-            selector: (_, dataProvider) => dataProvider.counter,
+            selector: (_, homeProvider) => homeProvider.counter,
             builder: (_, data, child) {
-              return Text(
-                data.toString(),
+              return Column(
+                children: [
+                  Text(
+                    data.toString(),
+                  ),
+                  // 重要，当存在child时，则渲染
+                  child!
+                ],
               );
             },
             child: const Text("data"),
