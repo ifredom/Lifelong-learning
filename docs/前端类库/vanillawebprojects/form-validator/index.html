@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>form-validator</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main class="container">
+      <form id="form" class="form">
+        <h2>注册</h2>
+        <div class="control-input">
+          <label for="username">Username</label>
+          <input id="username" type="text" placeholder="用户名" />
+          <small class="small">错误信息</small>
+        </div>
+
+        <div class="control-input">
+          <label for="email">email</label>
+          <input id="email" type="email" placeholder="email" />
+          <small class="small">错误信息</small>
+        </div>
+        <div class="control-input">
+          <label for="password">password</label>
+          <input id="password" type="password" placeholder="password" />
+          <small class="small">错误信息</small>
+        </div>
+        <div class="control-input">
+          <label for="password2">confirm password</label>
+          <input
+            id="password2"
+            type="password"
+            placeholder="enter password again"
+          />
+          <small class="small">错误信息</small>
+        </div>
+
+        <button class="submit" type="submit">submit</button>
+      </form>
+    </main>
+    <scirpt src="./script.js"></scirpt>
+  </body>
+</html>
