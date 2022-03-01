@@ -39,7 +39,23 @@ class Queue {
  * 接下来又下一个人继续从头开始数数，直到最后一人胜出
  * 问：最终胜利的那个人是谁
  */
+var passFlow = function (nameList, num) {
+  var queue = new Queue();
+  for (let index = 0; index < nameList.length; index++) {
+    const element = nameList[index];
+    queue.enqueue(element);
+  }
+  console.log(queue);
 
+  for (let index = 0; index <= num - 1; index++) {
+    queue.enqueue(queue.dequeue());
+  }
+  queue.dequeue();
+  console.log(queue);
+};
+const nameList = ["TOM", "jack", "tony", "farry"];
+var velocity = passFlow(nameList, 2);
+console.log(velocity);
 /**
  * *应用：广度优先搜索算法
  */
