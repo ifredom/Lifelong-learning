@@ -30,40 +30,40 @@ h2 {
   padding: 30px 40px;
 }
 
-.control-input {
+.form-control {
   display: flex;
   flex-direction: column;
   margin-bottom: 10px;
   padding-bottom: 20px;
 }
-.control-input label {
+.form-control label {
   margin-bottom: 10px;
   margin-left: 10px;
   color: #777;
 }
-.control-input input {
+.form-control input {
   margin-bottom: 10px;
   padding: 10px;
   font-size: 16px;
   border-radius: 5px;
   border: 2px solid #f0f0f0;
 }
-.control-input .small {
+.form-control .small {
   visibility: hidden;
   color: #777;
 }
 
-.control-input.success input {
+.form-control.success input {
   border-color: var(--success-color);
 }
-.control-input.error .small {
+.form-control.error .small {
   visibility: visible;
 }
-.control-input.error input {
+.form-control.error input {
   border-color: var(--error-color);
 }
 
-.form .submit {
+.form button {
   display: block;
   width: 100%;
   padding: 10px 0;

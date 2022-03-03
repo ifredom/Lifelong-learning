@@ -5,9 +5,10 @@ const password = document.getElementById("password");
 const password2 = document.getElementById("password2");
 
 function checkRequired(arrInput) {
-  arrInput.forEach((input) => {
-    if (input.value.trim() === "") {
-      showError(input);
+  console.log(arrInput);
+  arrInput.forEach((inputItem) => {
+    if (inputItem.value.trim() === "") {
+      showError(inputItem);
     } else {
       showSuccess();
     }
@@ -16,15 +17,14 @@ function checkRequired(arrInput) {
 
 function showError(formControl) {
   console.log(formControl);
-  var small = formControl.querySelector(".small");
-  small.classList.add()
+  var small = formControl.querySelector("small");
+  formControl.classList.add("error");
 }
 
 function showSuccess(params) {}
 
-form.addEventListener("submit", function (e) {
+form.addEventListener("click", function (e) {
   e.preventDefault();
-
   if (checkRequired([username, email, password, password2])) {
   }
 });
