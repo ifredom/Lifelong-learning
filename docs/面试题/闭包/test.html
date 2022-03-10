@@ -38,17 +38,44 @@
     </style>
   </head>
   <body>
-    <script>
+    <!-- <script>
       var data = [];
-      for (let i = 0; i < 3; i++) {
+      for (var i = 0; i < 3; i++) {
         data[i] = function () {
           console.log(i);
         };
       }
-      console.log(data);
       data[0]();
       data[1]();
       data[2]();
+    </script> -->
+
+    <script>
+      var data1 = [];
+      for (var i = 0; i < 3; i++) {
+        setTimeout(() => {
+          data1[i] = function () {
+            console.log(i);
+          };
+        }, 0)();
+      }
+      console.log(data1);
+      data1[0]();
+      data1[1]();
+      data1[2]();
     </script>
+
+    <!-- <script>
+      var data2 = [];
+      for (let i = 0; i < 3; i++) {
+        data2[i] = function () {
+          console.log(i);
+        };
+      }
+      console.log(data2);
+      data2[0]();
+      data2[1]();
+      data2[2]();
+    </script> -->
   </body>
 </html>
