@@ -56,8 +56,9 @@ h2 {
 .form-control.success input {
   border-color: var(--success-color);
 }
-.form-control.error .small {
+.form-control.error small {
   visibility: visible;
+  color: red;
 }
 .form-control.error input {
   border-color: var(--error-color);
