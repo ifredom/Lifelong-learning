@@ -9,3 +9,7 @@
 5. 对象上定义新属性时，Proxy 可以监听到，Object.defineProperty 监听不到。
 6. 数组新增删除修改时，Proxy 可以监听到，Object.defineProperty 监听不到。
 7. Proxy 不兼容 IE，Object.defineProperty 不兼容 IE8 及以下。
+
+### 面试 Vue 知识点
+
+[Vue 知识点](https://juejin.cn/post/6984210440276410399#heading-4)
