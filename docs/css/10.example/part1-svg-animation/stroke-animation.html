@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>描边动画</title>
+
+    <link rel="stylesheet" href="iconfont.css" />
+
+    <style>
+      @keyframes line-anm {
+        to {
+          stroke-dashoffset: 0;
+        }
+      }
+      @keyframes fill-anm {
+        from {
+          fill: transparent;
+        }
+        to {
+          fill: yellowgreen;
+        }
+      }
+      .icon {
+        animation: fill-anm 2s ease forwards 1000ms;
+      }
+      svg {
+        font-size: 60px;
+        fill: none;
+        stroke: black;
+        stroke-width: 3;
+      }
+      svg path:nth-child(1) {
+        stroke-dasharray: 6874;
+        stroke-dashoffset: 6874;
+        animation: line-anm 2s ease forwards;
+      }
+    </style>
+  </head>
+  <body>
+    <svg
+      t="1647393784416"
+      class="icon"
+      viewBox="0 0 1024 1024"
+      version="1.1"
+      xmlns="http://www.w3.org/2000/svg"
+      p-id="3633"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+      width="200"
+      height="200"
+    >
+      <path
+        d="M941.54545479 933.36363652H696.09090869L632.68181826 757.45454521H417.90909131l-61.36363652 173.86363653H109.04545479L432.22727305 82.45454521h184.09090869L941.54545479 933.36363652z m-210.68181826-51.13636347h135L581.54545479 133.59090869h-112.5L182.68181826 880.18181826h135l59.31818174-173.86363652h290.45454521l63.40909132 175.90909131z m-102.27272784-280.22727305H413.81818174l106.36363652-308.86363652 108.40909043 308.86363652z m-141.13636348-51.13636347h67.5L520.18181826 450.63636348l-32.72727305 100.22727305z"
+        p-id="3634"
+      ></path>
+    </svg>
+
+    <script>
+      const paths = document.querySelectorAll("svg path");
+      const pathLen = paths[0].getTotalLength();
+      console.log(paths);
+      console.log(pathLen);
+    </script>
+  </body>
+</html>
