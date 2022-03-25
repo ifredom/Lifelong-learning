@@ -7,14 +7,35 @@
 # show all databases
 mysql> show databases;
 
-# show all tables
-mysql> show tables;
-
 # create database
 mysql> create databases firstDemo;
 
 # use one database
 mysql> use firstDemo
+
+# create table & inital structor
+mysql> create table t_student(id int, name varchar(15), age int, monet double);
+
+# show all tables
+mysql> show tables;
+
+# change dict name : monet to money
+mysql> alter table t_student change monet money double;
+
+mysql> select * from firstDemo;
+
+# drop dict
+mysql> alter table t_student drop id;
+
+# add dict
+mysql> alter table t_student add id int not null;
+
+# insert data table
+mysql> insert into t_student values('ifreom', 18, 999);
+
+# 自增主键起始值
+mysql> alter table t_student auto_increment=1000;
+mysql> insert into t_student values('tom', 20, 666);
 
 # exit msq
 mysql> exit;
@@ -34,6 +55,8 @@ mysql> quit;
 【数据权限控制】dcl: grant,revoke  （授权，撤销授权）
 
 ## actions
+
+
 
 ```bash
 # 1.0 查询所有字段
@@ -63,6 +86,7 @@ mysql> desc firstDemo;
 ```
 
 ### 条件查询
+> 重要：执行顺序(与逻辑循序不同): **from –> where –> select –> group by–> having–>order by（排序总是在最后）**
 
 - where：数据库中常用的是where关键字，用于在初始表中筛选查询。它是一个约束声明，用于约束数据，在返回结果集之前起作用。
 
@@ -70,7 +94,6 @@ mysql> desc firstDemo;
 
 - having：用于对where和group by查询出来的分组经行过滤，查出满足条件的分组结果。它是一个过滤声明，是在查询返回结果集以后对查询结果进行的过滤操作。
 
-执行顺序: **select –>where –> group by–> having–>order by**
 
 * 等于 =
 * 大于 >
@@ -142,4 +165,29 @@ mysql>select dictName from firstDemo where dictName like '__S%';
 ## 找出名字中有下划线的的dictName
 mysql>select dictName from firstDemo where dictName like '%_%';
 
+```
+
+### 排序
+
+
+```bash
+# 4.0 排序查询
+
+## 默认升序
+mysql> select name,money from t_student order by money;
+
+## 指定降序
+mysql> select name,money from t_student order by money desc;
+
+## 指定降序
+mysql> select name,money from t_student order by money asc;
+
+## 多条件排序. 先根据money升序，只有money相等时，启动age降序排列
+mysql> select name,money,age from t_student order by money asc,age desc;
+
+## 根据第几列排序(不建议开发使用)
+mysql> select name,money,age from t_student order by 2;
+
+### 综合测试题目：找出金钱在500到1000范围内的人，并根据金钱降序，年龄升序
+mysql> select name,age,money from t_student where money >=500 and money<=1000 order by money desc,age asc;
 ```
