@@ -1,8 +1,14 @@
 # [mysql中文文档](https://www.mysqlzh.com/)
 
 ```bash
-# login mysql. 可忽略空格
+# login. 可忽略空格
 > mysql -u root -p -P 3306
+
+# 设置密码
+mysql>ALTER USER 'root'@'localhost' IDENTIFIED BY '123456';
+
+# login. 可忽略空格
+> mysql -uroot -p123456 -P 3306
 
 # show all databases
 mysql> show databases;
@@ -12,6 +18,9 @@ mysql> create databases firstDemo;
 
 # use one database
 mysql> use firstDemo
+
+# 导入数据库
+mysql> source D:\Aworkspace\A_project_java\renren-fast\db\mysql.sql;
 
 # create table & inital structor
 mysql> create table t_student(id int, name varchar(15), age int, monet double);
@@ -36,6 +45,9 @@ mysql> insert into t_student values('ifreom', 18, 999);
 # 自增主键起始值
 mysql> alter table t_student auto_increment=1000;
 mysql> insert into t_student values('tom', 20, 666);
+
+
+
 
 # exit msq
 mysql> exit;
