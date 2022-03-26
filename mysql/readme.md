@@ -38,7 +38,7 @@ mysql> use firstDemo
 mysql> source D:\Aworkspace\A_project_java\renren-fast\db\mysql.sql;
 
 # create table & inital structor
-mysql> create table t_student(id int, name varchar(15), age int, monet double);
+mysql> create table student(id int, name varchar(15), age int, monet double);
 
 # show all tables
 mysql> show tables;
@@ -46,12 +46,11 @@ mysql> show tables;
 mysql> select * from firstDemo;
 
 
-# insert data table
-mysql> insert into t_student values('ifreom', 18, 999);
+
 
 # 自增主键起始值
-mysql> alter table t_student auto_increment=1000;
-mysql> insert into t_student values('tom', 20, 666);
+mysql> alter table student auto_increment=1000;
+mysql> insert into student values('tom', 20, 666);
 
 
 # exit msq
@@ -59,26 +58,42 @@ mysql> exit;
 mysql> quit;
 ```
 
+
+
+```bash
+# 插入一条数据
+mysql> insert into student values('ifreom', 18, 999);
+
+# 更新某一字段数据
+mysql> update student set work='engineer' where name='ifredom';
+
+# 删除一条数据
+mysql> delete from student where money>1000000;
+```
+
 ```bash
 
 # 修改字段名称 : monet to money
-mysql> alter table t_student change monet money double;
+mysql> alter table student change monet money double;
 
 # 删除字段
-mysql> alter table t_student drop id;
+mysql> alter table student drop id;
 
 # 添加一个字段
-mysql> alter table t_student add id int not null;
+mysql> alter table student add id int not null;
 
 # 加一个字段 在name列之后
-mysql> alter table t_student add work varchar(255) after name;
+mysql> alter table student add work varchar(255) after name;
 
 # 加一个字段 在第一列
-mysql> alter table t_student add work varchar(255) first;
+mysql> alter table student add work varchar(255) first;
 
-# 更新某一字段数据
-mysql> update t_student set work='engineer' where name='ifredom';
+# 修改 数据表的名称
+alter table t_student rename student;
 
+
+# 删除一张表
+alter drop table student_copy;
 ```
 
 ## 查询
@@ -198,20 +213,20 @@ mysql>select dictName from firstDemo where dictName like '%_%';
 # 4.0 排序查询
 
 ## 默认升序
-mysql> select name,money from t_student order by money;
+mysql> select name,money from student order by money;
 
 ## 指定降序
-mysql> select name,money from t_student order by money desc;
+mysql> select name,money from student order by money desc;
 
 ## 指定降序
-mysql> select name,money from t_student order by money asc;
+mysql> select name,money from student order by money asc;
 
 ## 多条件排序. 先根据money升序，只有money相等时，启动age降序排列
-mysql> select name,money,age from t_student order by money asc,age desc;
+mysql> select name,money,age from student order by money asc,age desc;
 
 ## 根据第几列排序(不建议开发使用)
-mysql> select name,money,age from t_student order by 2;
+mysql> select name,money,age from student order by 2;
 
 ### 综合测试题目：找出金钱在500到1000范围内的人，并根据金钱降序，年龄升序
-mysql> select name,age,money from t_student where money >=500 and money<=1000 order by money desc,age asc;
+mysql> select name,age,money from student where money >=500 and money<=1000 order by money desc,age asc;
 ```
