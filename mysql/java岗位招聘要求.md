@@ -4,10 +4,10 @@
 
 > 1-3年Java招聘要求
 
-1. JAVA基础知识扎实，理解I/O、多线程、集合、网络等基础框架，精通J2EE架构体系，
+1. JAVA基础知识扎实，理解I/O、多线程、集合、网络等基础框架
 2. 熟练掌握linux常用基本操作，熟练git和maven版本控制、构建工具
 3. 熟悉主流数据库（MySQL），熟悉常见SQL优化技巧，拥有较好的数据库设计能力；
-4. 熟悉Spring，SpringBoot，Spring Cloud,Mybatis等主流开源框架；
+4. 熟悉Spring，SpringMVC, SpringBoot，Spring Cloud,Mybatis等主流开源框架；
 5. 熟悉Tomcat、WebLogic、JBoss等应用服务器其中一种；
 5. 熟悉redis，MQ 等中间件；
 6. 了解Kakfa,Zookeeper,es(大数据) NoSQL等中间件；
