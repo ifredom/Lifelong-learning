@@ -66,7 +66,7 @@ mysql> quit;
 
 【数据权限控制】dcl: grant,revoke  （授权，撤销授权）
 
-## actions
+## 查询
 
 
 
