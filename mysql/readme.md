@@ -1,5 +1,20 @@
 # [mysql中文文档](https://www.mysqlzh.com/)
 
+
+
+- 【数据查询语言】dql: `select（查询）`
+
+- 【数据操作语言】dml: `insert, delete, update（新建，删除，修改）`
+
+- 【结构定义语言】ddl: `create, drop, alter （新建，删除，修改）`
+`
+- 【事务控制语言】tcl: `commit, rollback（提交，回滚）`
+
+- 【数据权限控制】dcl: `grant,revoke（授权，撤销授权）`
+
+
+>重要：执行顺序(与逻辑循序不同): **from –> where –> group by –> having  –> select  –>order by（排序总是在最后）**
+
 ```bash
 # login. 可忽略空格
 > mysql -u root -p -P 3306
@@ -28,16 +43,8 @@ mysql> create table t_student(id int, name varchar(15), age int, monet double);
 # show all tables
 mysql> show tables;
 
-# change dict name : monet to money
-mysql> alter table t_student change monet money double;
-
 mysql> select * from firstDemo;
 
-# drop dict
-mysql> alter table t_student drop id;
-
-# add dict
-mysql> alter table t_student add id int not null;
 
 # insert data table
 mysql> insert into t_student values('ifreom', 18, 999);
@@ -47,28 +54,34 @@ mysql> alter table t_student auto_increment=1000;
 mysql> insert into t_student values('tom', 20, 666);
 
 
-
-
 # exit msq
 mysql> exit;
 mysql> quit;
 ```
 
-## classifaction 
+```bash
 
-【数据查询语言】dql: select（查询）
+# 修改字段名称 : monet to money
+mysql> alter table t_student change monet money double;
 
-【数据操作语言】dml: insert, delete, update  （新建，删除，修改）
+# 删除字段
+mysql> alter table t_student drop id;
 
-【结构定义语言】ddl: create, drop, alter （新建，删除，修改）
+# 添加一个字段
+mysql> alter table t_student add id int not null;
 
-【事务控制语言】tcl: commit, rollback  (提交，回滚)
+# 加一个字段 在name列之后
+mysql> alter table t_student add work varchar(255) after name;
 
-【数据权限控制】dcl: grant,revoke  （授权，撤销授权）
+# 加一个字段 在第一列
+mysql> alter table t_student add work varchar(255) first;
+
+# 更新某一字段数据
+mysql> update t_student set work='engineer' where name='ifredom';
+
+```
 
 ## 查询
-
-
 
 ```bash
 # 1.0 查询所有字段
@@ -98,7 +111,6 @@ mysql> desc firstDemo;
 ```
 
 ### 条件查询
-> 重要：执行顺序(与逻辑循序不同): **from –> where –> select –> group by–> having–>order by（排序总是在最后）**
 
 - where：数据库中常用的是where关键字，用于在初始表中筛选查询。它是一个约束声明，用于约束数据，在返回结果集之前起作用。
 
