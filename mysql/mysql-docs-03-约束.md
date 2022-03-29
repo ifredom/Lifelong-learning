@@ -39,7 +39,18 @@ CREATE TABLE TA_ENGINE2(
 CREATE TABLE TA_ENGINE3(
   `id` int AUTO_INCREMENT,
   `name` varchar(127),
+  `sex` char(5) default 'man',
   primary key(`id`)
+);
+```
+
+3. 外键
+
+```sql
+CREATE TABLE TA_ENGINE4(
+  `id` int primary key AUTO_INCREMENT,
+  `name` varchar(127),
+  foreign key(`id`) references TA_ENGINE3(`sex`)
 );
 ```
 
