@@ -40,6 +40,7 @@ mysql默认事务隔离级别
 
 ## action 操作
 
+- use transaction  开启事务
 - commit 提交事务  insert 语句自动提交
 - rollback 回滚事务 回滚到上一次提交位置
 
@@ -59,6 +60,10 @@ mysql> start transaction;
 mysql> set global transaction isolation level read uncommitted;
 
 mysql> set global transaction isolation level read committed;
+
+mysql> set global transaction isolation level repeatable read;
+
+mysql> set global transaction isolation level serializable;
 
 commit;
 ```
