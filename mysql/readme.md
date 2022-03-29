@@ -22,6 +22,9 @@ mysql>ALTER USER 'root'@'localhost' IDENTIFIED BY '123456';
 # login. 可忽略空格
 > mysql -uroot -p123456 -P 3306
 
+# 新建用户
+mysql> create user guess identified by '000000';
+
 # show all databases
 mysql> show databases;
 
