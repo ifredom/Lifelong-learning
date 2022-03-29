@@ -59,3 +59,28 @@ CREATE TABLE `tl_student` (
 
  INSERT INTO `tl_student` (`user_id`, `username`, `sex`, `department`) VALUES ('12345678', 'admin', 1,"development");
 ```
+
+## date_format() 日期格式化
+
+> date 是短日期，只包含年月日。 datetime,包含年月日时分秒
+
+- str_to_date( String 日期, 格式) 如果字符串刚好是 **%Y-%m-%d** 年月日这种格式，那么可以不用 str_to_date 函数
+
+---
+
+- %Y 年
+- %m 月
+- %d 日
+- %h 时
+- %m 分
+- %s 秒
+
+```bash
+mysql> update teacher set birth = str_to_date('01-10-1990','%d-%m-%Y');
+
+## 用户返回需要设置的日期格式
+mysql> select date_format(birth,'%Y月%m年%d日') as birthday from teacher;
+
+## 设置 datetime 长日期
+mysql> update teacher set create_time='1991-05-01 17:28:59';
+```

@@ -1,19 +1,16 @@
-# [mysql中文文档](https://www.mysqlzh.com/)
-
-
+# [mysql 中文文档](https://www.mysqlzh.com/)
 
 - 【数据查询语言】dql: `select（查询）`
 
 - 【数据操作语言】dml: `insert, delete, update（新建，删除，修改）`
 
 - 【结构定义语言】ddl: `create, drop, alter （新建，删除，修改）`
-`
+  `
 - 【事务控制语言】tcl: `commit, rollback（提交，回滚）`
 
 - 【数据权限控制】dcl: `grant,revoke（授权，撤销授权）`
 
-
->重要：执行顺序(与逻辑循序不同): **from –> where –> group by –> having  –> select  –>order by（排序总是在最后）**
+> 重要：执行顺序(与逻辑循序不同): **from –> where –> group by –> having –> select –>order by（排序总是在最后） -> limit x,y**
 
 ```bash
 # login. 可忽略空格
@@ -57,8 +54,6 @@ mysql> insert into student values('tom', 20, 666);
 mysql> exit;
 mysql> quit;
 ```
-
-
 
 ```bash
 # 插入一条数据
@@ -127,12 +122,11 @@ mysql> desc firstDemo;
 
 ### 条件查询
 
-- where：数据库中常用的是where关键字，用于在初始表中筛选查询。它是一个约束声明，用于约束数据，在返回结果集之前起作用。
+- where：数据库中常用的是 where 关键字，用于在初始表中筛选查询。它是一个约束声明，用于约束数据，在返回结果集之前起作用。
 
-- group by:对select查询出来的结果集按照某个字段或者表达式进行分组，获得一组组的集合，然后从每组中取出一个指定字段或者表达式的值。
+- group by:对 select 查询出来的结果集按照某个字段或者表达式进行分组，获得一组组的集合，然后从每组中取出一个指定字段或者表达式的值。
 
-- having：用于对where和group by查询出来的分组经行过滤，查出满足条件的分组结果。它是一个过滤声明，是在查询返回结果集以后对查询结果进行的过滤操作。
-
+- having：用于对 where 和 group by 查询出来的分组经行过滤，查出满足条件的分组结果。它是一个过滤声明，是在查询返回结果集以后对查询结果进行的过滤操作。
 
 * 等于 =
 * 大于 >
@@ -181,7 +175,7 @@ mysql>select dictName1 from firstDemo where age not in (18,20);
 ### 模糊查询
 
 - **%** 匹配任意字符
-- **_** 匹配任意字符
+- **\_** 匹配任意字符
 - **%** 匹配任意字符
 
 ```bash
@@ -207,7 +201,6 @@ mysql>select dictName from firstDemo where dictName like '%_%';
 ```
 
 ### 排序
-
 
 ```bash
 # 4.0 排序查询
