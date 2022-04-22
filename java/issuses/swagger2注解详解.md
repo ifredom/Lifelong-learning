@@ -45,22 +45,7 @@ https://blog.csdn.net/xiaojin21cen/article/details/78654652
 	<version>1.9.6</version>
 </dependency>
 
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
+
 （注：当前2018年，请使用最新的依赖）
 
 2、swagger2 注解整体说明
