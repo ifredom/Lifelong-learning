@@ -1,8 +1,9 @@
+-- 创建学生表
 CREATE TABLE student (
-	sid varchar(10),
-	sname varchar(10),
-	sage datetime,
-	ssex varchar(10)
+	sid varchar(10),   # 学生id
+	sname varchar(10), # 姓名
+	sage datetime,     # 年龄
+	ssex varchar(10)   # 性别
 );
 
 insert into student values('01' , '赵雷' , '1990-01-01' , '男');
@@ -14,29 +15,32 @@ insert into student values('06' , '吴兰' , '1992-03-01' , '女');
 insert into student values('07' , '郑竹' , '1989-07-01' , '女');
 insert into student values('08' , '王菊' , '1990-01-20' , '女');
 
+-- 创建课程表
 CREATE TABLE course (
-	cid varchar(10),
-	cname varchar(10),
-	tid varchar(10)
+	cid varchar(10),   # 课程id
+	cname varchar(10), # 课程名称
+	tid varchar(10)    # 老师id
 );
 
 insert into course values('01' , '语文' , '02');
 insert into course values('02' , '数学' , '01');
 insert into course values('03' , '英语' , '03');
 
+-- 创建教师表
 CREATE TABLE teacher (
-	tid varchar(10),
-	tname varchar(10)
+	tid varchar(10),  # 教师id
+	tname varchar(10) # 教师名称
 );
 
 insert into teacher values('01' , '张三');
 insert into teacher values('02' , '李四');
 insert into teacher values('03' , '王五');
 
+-- 创建成绩表
 CREATE TABLE sc (
-	sid varchar(10),
-	cid varchar(10),
-	score decimal(18, 1)
+	sid varchar(10),       # 学生id
+	cid varchar(10),       # 课程id
+	score decimal(18, 1)   # 得分
 );
 
 insert into sc values('01' , '01' , 80);
