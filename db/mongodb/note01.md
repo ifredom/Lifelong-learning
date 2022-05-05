@@ -97,4 +97,8 @@ db.stus.update(query,update,{
 # 更新符合条件的多条文档
 > db.getCollection('stus').updateMany({"sex":1.0},{$set:{"age":888}})
 > db.getCollection('stus').update({"sex":1.0},{$set:{"age":888}},{multi:true})
+
+
+# 使用点，添加一个属性mysuper,mysuper的属性值为一个objet： {hero:"天蓬元帅"}
+> db.getCollection('stus').update({"name":"猪八戒2"},{$set:{"name":"猪八戒","mysuper.hero":"天蓬元帅"}})
 ```

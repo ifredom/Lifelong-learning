@@ -21,7 +21,7 @@
 - MySQL（已完成）
 - Maven（已完成）
 - Spring5（已完成）
-- 
+- [MongoDB（已完成）](https://www.bilibili.com/video/BV18s411E78K?p=11&spm_id_from=pageDriver)
 ## 适合初级练手得项目
 
 
