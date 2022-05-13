@@ -4,7 +4,7 @@
 - 了解 若依(后台系统脚手架)
 
 ## 进行中
-- 寻找项目实战 熟练操作crud
+- 巩固Maven
 
 ## [路线](https://gitee.com/liyupi/code-roadmap/blob/main/docs/roadmap/Java%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF.md)
 
@@ -17,14 +17,19 @@
 6. [日期常用类474](https://www.bilibili.com/video/BV1Kb411W75N)
 
 
-- javaSE （已完成，跳过了坦克大战，多线程）
-- MySQL（已完成）
-- Maven（已完成）
-- Spring5（已完成）
-- [MongoDB（已完成）](https://www.bilibili.com/video/BV18s411E78K?p=11&spm_id_from=pageDriver)
-- 项目实战：博客系统（已完成）
-- Redis 基本用法与封装 （已完成）
-- 
+- 1. [javaSE](https://www.bilibili.com/video/BV1fh411y7R8?spm_id_from=333.999.0.0) （已完成，跳过了坦克大战，多线程）
+- 2. [MySQL（已完成）](https://www.bilibili.com/video/BV1Vy4y1z7EX?spm_id_from=333.999.0.0)
+- 3. [Maven（已完成）](https://www.bilibili.com/video/BV1Ah411S7ZE?p=14)
+- 4. [Spring5 狂神速通（已完成）](https://www.bilibili.com/video/BV1WE411d7Dv?spm_id_from=333.999.0.0 )
+- 5. [MongoDB（已完成）](https://www.bilibili.com/video/BV18s411E78K?p=11&spm_id_from=pageDriver)
+- 6. 项目实战：博客系统（已完成）
+- 7. Redis 基本用法与封装 （已完成）
+- 8. [MyBatis](https://www.bilibili.com/video/BV1mW411M737)
+---
+巩固学习
+
+- mysql 经典练习50题
+- [Spring5 精讲](https://pan.baidu.com/s/1Z8csgq4phdUtqkwq81fqMg )  百度网盘 资源maven
 ## 适合初级练手得项目
 
 
