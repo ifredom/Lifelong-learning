@@ -4,7 +4,7 @@
 - 了解 若依(后台系统脚手架)
 
 ## 进行中
-- MongoDB 操作
+- 寻找项目实战 熟练操作crud
 
 ## [路线](https://gitee.com/liyupi/code-roadmap/blob/main/docs/roadmap/Java%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF.md)
 
@@ -22,6 +22,9 @@
 - Maven（已完成）
 - Spring5（已完成）
 - [MongoDB（已完成）](https://www.bilibili.com/video/BV18s411E78K?p=11&spm_id_from=pageDriver)
+- 项目实战：博客系统（已完成）
+- Redis 基本用法与封装 （已完成）
+- 
 ## 适合初级练手得项目
 
 
@@ -30,6 +33,7 @@
 - MySql练习每日一练
 - AOP切面编程之 - [AOP 注解分页](https://juejin.cn/post/7079661639078936589#heading-6)
 - [集成Demo](https://github.com/xkcoding/spring-boot-demo)
+- BaseMapper 实现自定义通用方法
 - 实现自己得后台系统脚手架
 
 
