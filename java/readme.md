@@ -24,12 +24,13 @@
 - 5. [MongoDB（已完成）](https://www.bilibili.com/video/BV18s411E78K?p=11&spm_id_from=pageDriver)
 - 6. 项目实战：博客系统（已完成）
 - 7. Redis 基本用法与封装 （已完成）
-- 8. [MyBatis](https://www.bilibili.com/video/BV1mW411M737)
+- 8. [MyBatis](https://www.bilibili.com/video/av894307478/?spm_id_from=333.788.video.desc.click)
 ---
 巩固学习
 
-- mysql 经典练习50题
-- [Spring5 精讲](https://pan.baidu.com/s/1Z8csgq4phdUtqkwq81fqMg )  百度网盘 资源maven
+- 1. mysql 经典练习50题
+- 2. [Spring5 精讲](https://pan.baidu.com/s/1Z8csgq4phdUtqkwq81fqMg )  百度网盘 资源maven
+- 3. Redis深入-常见内存穿透等问题处理办法
 ## 适合初级练手得项目
 
 
