@@ -1,5 +1,10 @@
 # [mysql 中文文档](https://www.mysqlzh.com/)
 
+阅读书籍：
+- 《MySQL 必知必会》
+- 《高性能 MySQL》 
+- 《MySQL 技术内幕》
+
 - 【数据查询语言】dql: `select（查询）`
 
 - 【数据操作语言】dml: `insert, delete, update（新建，删除，修改）`
