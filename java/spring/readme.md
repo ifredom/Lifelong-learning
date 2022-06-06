@@ -1,0 +1,6 @@
+# spring
+
+spring和springmvc都是用来管理对象的容器。
+spring主要用来管理dao和Service等其他对象
+springMVC主要用来管理controller
+所以我们在 SpringMVC 的配置文件里配置的注解扫描路径就是 Controller的路径，而 Spring 的配置文件配置的注解扫描路径会排除 Controller。

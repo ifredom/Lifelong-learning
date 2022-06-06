@@ -1,0 +1,22 @@
+# 项目经历
+
+
+
+## 智慧酒店
+
+- 基于虹软ArcSoft人脸识别，活体检测、认证的离线SDK，针对酒店场景，通过人证核验，酒店VIP系统，刷线餐厅消费等方案，打造智慧酒店。
+
+- 相关技术： 微信小程序 + Android + SSM + MySQL
+
+-项目结构： 通过人脸核验，实现等级入住，出入酒店，房间净化智能监控等功能；小程序端提供预约酒店，账单结算等功能；App端用于酒店前台登记，广告展示。
+
+
+
+> ssm全称: Spring + SpringMVC + MyBatis
+
+
+
+## 实战
+
+
+[实战经验](https://www.bilibili.com/video/BV1uK411p7Bp?spm_id_from=333.337.search-card.all.click)
