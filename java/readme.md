@@ -5,7 +5,7 @@
 
 ## 进行中
 
-- 学习 MyBatis-plus
+- 学习 Spring5 精讲
 
 ## [基础路线](https://gitee.com/liyupi/code-roadmap/blob/main/docs/roadmap/Java%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF.md)
 
@@ -17,7 +17,7 @@
 - 6. 项目实战：博客系统（已完成）
 - 7. Redis 基本用法与封装 （已完成）
 - 8. [MongoDB（已完成）](https://www.bilibili.com/video/BV18s411E78K?p=11&spm_id_from=pageDriver)
-- 9. [MyBatis-plus](https://www.bilibili.com/video/BV12R4y157Be/?p=4&spm_id_from=pageDriver)
+- 9. [MyBatis-plus（已完成）](https://www.bilibili.com/video/BV12R4y157Be/?p=4&spm_id_from=pageDriver)
 ---
 巩固
 
@@ -37,6 +37,7 @@
 - [集成Demo](https://github.com/xkcoding/spring-boot-demo)
 - BaseMapper 实现自定义通用方法
 - 实现自己得后台系统脚手架
+- 异步线程隔离
 
 
 ## 资源

@@ -1,5 +1,7 @@
 # mysql-docs
 
+[练习题册](https://www.nowcoder.com/practice/ddbcedcd9600403296038ee44a172f2d?tpId=199&tqId=1971219&ru=%2Fpractice%2Ff9f82607cac44099a77154a80266234a&qru=%2Fta%2Fsql-quick-study%2Fquestion-ranking&sourceUrl=%2Fexam%2Foj%3Ftab%3DSQL%25E7%25AF%2587%26topicId%3D199%26fromPut%3Dpc_newmedia_zhihu_kol_rocky)
+
 ## 1. 单行处理函数
 
 - lower 转小写

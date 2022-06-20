@@ -22,6 +22,9 @@ CREATE TABLE TA_ENGINE1(
 );
 
 -- 添加唯一约束
+select distinct  name from TA_ENGINE1;
+
+-- 添加唯一约束
 alter table temp add unique (name, password);
 -- 修改唯一约束
 alter table temp modify name varchar(25) unique;
