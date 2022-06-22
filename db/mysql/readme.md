@@ -1,9 +1,7 @@
 # [mysql 中文文档](https://www.mysqlzh.com/)
 
-阅读书籍：
-- 《MySQL 必知必会》
-- 《高性能 MySQL》 
-- 《MySQL 技术内幕》
+执行顺序(与逻辑循序不同): **from –> where –> group by –> having –> select –>order by（排序总是在最后） -> limit x,y**
+
 
 - 【数据查询语言】dql: `select（查询）`
 
@@ -15,91 +13,76 @@
 
 - 【数据权限控制】dcl: `grant,revoke（授权，撤销授权）`
 
-> 重要：执行顺序(与逻辑循序不同): **from –> where –> group by –> having –> select –>order by（排序总是在最后） -> limit x,y**
+> 推介阅读书籍：《MySQL 必知必会》 ， 《高性能 MySQL》 ，《MySQL 技术内幕》
 
 ```bash
-# login. 可忽略空格
+# 登录 可忽略空格
 > mysql -u root -p -P 3306
 
 # 设置密码
 mysql>ALTER USER 'root'@'localhost' IDENTIFIED BY '123456';
 
-# login. 可忽略空格
+# login 可忽略空格
 > mysql -uroot -p123456 -P 3306
 
 # 新建用户
 mysql> create user guess identified by '000000';
 
-# show all databases
+# 显示所有数据库
 mysql> show databases;
 
-# create database
+# 新建数据库
 mysql> create databases firstDemo;
 
-# use one database
+# 使用某数据库
 mysql> use firstDemo
 
 # 导入数据库
 mysql> source D:\Aworkspace\A_project_java\renren-fast\db\mysql.sql;
 
-# create table & inital structor
+# 创建表以及结构
 mysql> create table student(id int, name varchar(15), age int, monet double);
 
-# show all tables
+# 显示所有表
 mysql> show tables;
-
 mysql> select * from firstDemo;
 
-
-
-
-# 自增主键起始值
+# 设置 - 自增主键起始值
 mysql> alter table student auto_increment=1000;
-mysql> insert into student values('tom', 20, 666);
 
-
-# exit msq
+# 退出
 mysql> exit;
 mysql> quit;
 ```
 
+
+## CRUD-增
+
+语法： insert into [tableName] values([filedValue],[filedValue], ...)
+
 ```bash
-# 插入一条数据
 mysql> insert into student values('ifreom', 18, 999);
+mysql> insert into student values('tom', 20, 666);
+```
+>`注意：（插入语句每一个字段都不能缺）`
 
-# 更新某一字段数据
-mysql> update student set work='engineer' where name='ifredom';
+## CRUD-删
 
+语法： delete from [tableName] where [condition]
+```bash
 # 删除一条数据
 mysql> delete from student where money>1000000;
 ```
 
+## CRUD-改
+
+语法： update  [tableName] set [field]=[fieldValue],[field]=[fieldValue] where [condition]
 ```bash
-
-# 修改字段名称 : monet to money
-mysql> alter table student change monet money double;
-
-# 删除字段
-mysql> alter table student drop id;
-
-# 添加一个字段
-mysql> alter table student add id int not null;
-
-# 加一个字段 在name列之后
-mysql> alter table student add work varchar(255) after name;
-
-# 加一个字段 在第一列
-mysql> alter table student add work varchar(255) first;
-
-# 修改 数据表的名称
-alter table t_student rename student;
-
-
-# 删除一张表
-alter drop table student_copy;
+# 更新某一字段数据
+mysql> update student set work='engineer' where name='ifredom';
 ```
 
-## 查询
+## CRUD-查询
 
 ```bash
 # 1.0 查询所有字段
@@ -121,12 +104,6 @@ mysql>select dictName1,dictName2 from firstDemo;
 mysql>select dictName1,dictName2 * 12 from firstDemo;
 ```
 
-```bash
-# 2. 查看表结构
-mysql> description firstDemo;
-mysql> desc firstDemo;
-
-```
 
 ### 条件查询
 
@@ -230,4 +207,53 @@ mysql> select name,money,age from student order by 2;
 
 ### 综合测试题目：找出金钱在500到1000范围内的人，并根据金钱降序，年龄升序
 mysql> select name,age,money from student where money >=500 and money<=1000 order by money desc,age asc;
+```
+
+
+
+### 表结构修改
+
+```bash
+
+# 修改字段名称 : monet to money
+mysql> alter table student change monet money double;
+
+# 删除字段
+mysql> alter table student drop id;
+
+# 添加一个字段
+mysql> alter table student add id int not null;
+
+# 加一个字段 在name列之后
+mysql> alter table student add work varchar(255) after name;
+
+# 加一个字段 在第一列
+mysql> alter table student add work varchar(255) first;
+
+# 修改 数据表的名称
+alter table t_student rename student;
+
+# 删除一张表
+alter drop table student_copy;
+
+# 查看表结构
+mysql> description firstDemo;
+mysql> desc firstDemo;
+```
+
+## table 创建表
+
+> mysql-data.sql 创建表时，必须带上主键
+
+```bash
+CREATE TABLE `tl_student` (
+  `user_id` varchar(64),
+  `username` varchar(255) COMMENT '姓名',
+  `sex` int(1) COMMENT '性别',
+  `department` varchar(255) COMMENT '部门',
+  PRIMARY KEY (`user_id`)
+) ENGINE=`InnoDB` DEFAULT CHARACTER SET utf8mb4 COMMENT='菜单管理';
+
+
+ INSERT INTO `tl_student` (`user_id`, `username`, `sex`, `department`) VALUES ('12345678', 'admin', 1,"development");
 ```

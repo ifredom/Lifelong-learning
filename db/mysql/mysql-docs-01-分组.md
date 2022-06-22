@@ -7,6 +7,7 @@
 - lower 转小写
 - upper 转大写
 - substr(diceName, start, end) 取字串
+- stubstring_index(diceName, start, end) 取字串
 - trim(dictName) 去除空格
 - length(dictName) 取长度
 - date_format 日期格式化
@@ -16,6 +17,8 @@
 - round 四舍五入
 - rand() 生成随机数
 - ifnull 可以将 null 转换成具体值
+- replace(expression,targetStr,valueStr) 替换
+
 
 ```bash
 
@@ -29,7 +32,11 @@ mysql> select name,(age +ifnull(id,0))*2 from student;
 
 ## 总行数，（不为null的行）
 mysql> select count(money) from student;
+
+## format() 字符传格式化
+mysql> select format(salary,'￥99,999,999') from teacher;
 ```
+
 
 ## 2. 分组处理函数
 
@@ -80,37 +87,53 @@ mysql>  select department,avg(money) from student where work <> 'boss' group by 
 - 使用 `having` 可以对分组之后的数据进一步筛选，
 - 优化策略：优先使用`where` ,其次选择`having`
 
-> distinct 关键字 去重
+
+### distinct （ 去重关键字）
 
 ```bash
 mysql>  select distinct department,money from student;
 ```
 
-## 4. 连接查询（重要性 ⭐⭐⭐⭐⭐⭐）
+## date_format() 日期格式化
 
-sql99 优点：表连接的条件是独立的，连接之后，如果还需要进一步筛选，再往后继续添加 where
+> date 是短日期，只包含年月日。 datetime,包含年月日时分秒
 
-- 表的连接次数越多，速度越慢
+- str_to_date( String 日期, 格式) 如果字符串刚好是 **%Y-%m-%d** 年月日这种格式，那么可以不用 str_to_date 函数
 
-- 内连接. inner 可以省略。完全匹配查询条件的数据都查询出来
-- 自连接. 一张表看成两张表，关键是： **取别名**
-- 外连接。 将 left/right 关键字 左/右侧 的表作为主表。**将主表的数据都查询出来**。
+---
 
-```bash
-# 内连接之等值连接 99语法 。inner 可以省略
-mysql> select s.classes from student s inner join teacher t on s.classes = t.classes;
-
-
-# 内连接。 找出老师所属班级的学生，并显示学生名，班级，老师名称
-mysql> select s.name,s.classes,t.name as teacher from teacher t join student s on t.classes = s.classes;
-
-# 外连接。 将right关键字右侧的表作为主表。将主表的数据都查询出来。
-mysql> select s.name,s.classes,t.name as teacher from student s right join teacher t on s.classes = t.classes;
-
-```
-
-## format() 字符传格式化
+- %Y 年
+- %m 月
+- %d 日
+- %h 时
+- %m 分
+- %s 秒
 
 ```bash
-mysql> select format(salary,'￥99,999,999') from teacher;
+mysql> update teacher set birth = str_to_date('01-10-1990','%d-%m-%Y');
+
+## 用户返回需要设置的日期格式
+mysql> select date_format(birth,'%Y月%m年%d日') as birthday from teacher;
+
+## 设置 datetime 长日期
+mysql> update teacher set create_time='1991-05-01 17:28:59';
 ```
+## [from_unixtime 日期格式转化](https://www.nowcoder.com/knowledge/intro-index?kcid=20)
+```bash
+select
+from_unixtime(birth) as time
+From question_practice_detail
+
+# 将日期中的年、月、日分别提取出来
+select
+year('2021-08-01'),
+month('2021-08-01'),
+day('2021-08-01')
+From question_practice_detail
+
+# 计算日期差
+select
+DATEDIFF('2017-10-15 00:00:00','2017-09-15 00:00:00') as d
+from question_practice_detail
+```
+

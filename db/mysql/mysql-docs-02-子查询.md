@@ -31,56 +31,18 @@ mysql> select s.classes,s.avgmoney,t.salary from (select classes,avg(money) as a
 
 ## limit 分页
 
-> limit [X,Y] limit 后面可以跟 2 位，第一位 start 起始位置， 第二位长度
+> limit [X,Y] 
+
+- limit 后面可以跟 2 位，第一位 start 起始位置， 第二位长度
 
 ```bash
-#
+
 mysql> select * from teacher limit 1,3;
+
 # 每页显示10条记录  pageNo,PageSize
 mysql> select name from teacher limit 0,10;
 mysql> select name from teacher limit 1,10;
 mysql> select name from teacher limit 2,10;
+
 # 分页查询语句  String sql =  "select ... limit (pageNo-1) * pageZize, pageSize"
-```
-
-## table 创建表
-
-> mysql-data.sql 创建表时，必须带上主键
-
-```bash
-CREATE TABLE `tl_student` (
-  `user_id` varchar(64),
-  `username` varchar(255) COMMENT '姓名',
-  `sex` int(1) COMMENT '性别',
-  `department` varchar(255) COMMENT '部门',
-  PRIMARY KEY (`user_id`)
-) ENGINE=`InnoDB` DEFAULT CHARACTER SET utf8mb4 COMMENT='菜单管理';
-
-
- INSERT INTO `tl_student` (`user_id`, `username`, `sex`, `department`) VALUES ('12345678', 'admin', 1,"development");
-```
-
-## date_format() 日期格式化
-
-> date 是短日期，只包含年月日。 datetime,包含年月日时分秒
-
-- str_to_date( String 日期, 格式) 如果字符串刚好是 **%Y-%m-%d** 年月日这种格式，那么可以不用 str_to_date 函数
-
----
-
-- %Y 年
-- %m 月
-- %d 日
-- %h 时
-- %m 分
-- %s 秒
-
-```bash
-mysql> update teacher set birth = str_to_date('01-10-1990','%d-%m-%Y');
-
-## 用户返回需要设置的日期格式
-mysql> select date_format(birth,'%Y月%m年%d日') as birthday from teacher;
-
-## 设置 datetime 长日期
-mysql> update teacher set create_time='1991-05-01 17:28:59';
 ```
