@@ -29,6 +29,16 @@ from 中的子查询可以将传结果当作一张临时表
 mysql> select s.classes,s.avgmoney,t.salary from (select classes,avg(money) as avgmoney from student group by classes) s join teacher t on s.avgmoney > 800;
 ```
 
+## with 子查询抽取
+
+MySql 8.0之前的版本不支持
+
+```sql
+with x as (
+select * from student
+)
+select * from x
+```
 ## limit 分页
 
 > limit [X,Y] 
@@ -45,4 +55,12 @@ mysql> select name from teacher limit 1,10;
 mysql> select name from teacher limit 2,10;
 
 # 分页查询语句  String sql =  "select ... limit (pageNo-1) * pageZize, pageSize"
+```
+
+
+## in
+
+in后面并不是范围，二十一个具体的值
+```bash
+mysql> select name from teacher where money in(1000,2000，3000)
 ```

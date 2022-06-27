@@ -6,6 +6,7 @@
 ## 进行中
 
 - 学习 Spring5 精讲
+- spring整合demo
 
 ## [基础路线](https://gitee.com/liyupi/code-roadmap/blob/main/docs/roadmap/Java%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF.md)
 
@@ -24,7 +25,7 @@
 - 1. mysql 经典练习50题（已完成）
 - 2. [Spring5 精讲](https://pan.baidu.com/s/1Z8csgq4phdUtqkwq81fqMg )  百度网盘中存放资源
 - 3. Redis深入-常见内存穿透等问题处理办法（已完成）
-- 4. 力扣SQL入门练习题
+- 4. 力扣SQL入门练习题（已完成）
 - 
 ## 适合初级练手得项目
 

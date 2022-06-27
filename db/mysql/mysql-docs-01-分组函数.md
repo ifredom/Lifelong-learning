@@ -40,7 +40,8 @@ mysql> select format(salary,'￥99,999,999') from teacher;
 
 ## 2. 分组处理函数
 
-**分组处理函数只能放在 where 查询之前**
+**分组处理函数只能放在 where 查询之前，在group by分组完成后执行**
+
 
 - min(dictName)
 - max(dictName)
@@ -51,6 +52,8 @@ mysql> select format(salary,'￥99,999,999') from teacher;
 ```bash
 mysql> select max(age),min(money),sum(id),count(*) from student;
 ```
+
+example: 找出每个部门的最高薪资,是每个部门
 
 ## 3. 分组查询（重要性 ⭐⭐⭐⭐⭐⭐）
 
@@ -89,6 +92,8 @@ mysql>  select department,avg(money) from student where work <> 'boss' group by 
 
 
 ### distinct （ 去重关键字）
+
+distinct放在所有字段最前面，表示后面跟着的字段进行联合查询然后去重
 
 ```bash
 mysql>  select distinct department,money from student;
@@ -137,3 +142,16 @@ DATEDIFF('2017-10-15 00:00:00','2017-09-15 00:00:00') as d
 from question_practice_detail
 ```
 
+## count(field) 和 count(*)区别。
+- count(*)是统计总记录条数
+- count(field)是统计字段不为null的数据
+
+## union
+
+将结果集相加 .sql注入通过此实现
+
+```SQL
+SELECT tname,salary from teacher
+union
+SELECT tname,salary from teacher
+```

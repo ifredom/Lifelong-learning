@@ -234,7 +234,7 @@ mysql> alter table student add work varchar(255) first;
 alter table t_student rename student;
 
 # 删除一张表
-alter drop table student_copy;
+drop table if exists student_copy;
 
 # 查看表结构
 mysql> description firstDemo;

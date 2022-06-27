@@ -12,5 +12,6 @@ delete from view_name;
 
 ```
 
+## 视图的作用
 
-作用： 简化开发
+作用： 简化SQL，简化开发
