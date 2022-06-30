@@ -155,3 +155,13 @@ SELECT tname,salary from teacher
 union
 SELECT tname,salary from teacher
 ```
+
+## using
+
+于join ... on中的on等同
+
+```SQL
+SELECT tname,salary from teacher a join grade b on a.tid = b.tid
+# 等同于
+SELECT tname,salary from teacher a join grade b useing(tid)
+```
