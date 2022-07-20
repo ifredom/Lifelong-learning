@@ -1,4 +1,9 @@
 # Java路线
+
+- 手写框架
+- 手撕源码
+- 实现设计模式，算法
+
 ## 进行中
 - 瑞吉外卖
 ## [基础路线](https://gitee.com/liyupi/code-roadmap/blob/main/docs/roadmap/Java%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF.md)
