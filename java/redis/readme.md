@@ -9,6 +9,7 @@ Redis，英文全称是Remote Dictionary Server（远程字典服务），是一
 
 ## 数据类型
 
+
 - string  
 	- set key value,get key value
 	- 应用场景：共享session、分布式锁，计数器、限流
