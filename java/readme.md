@@ -1,11 +1,8 @@
 # Java路线
-
-- 手写框架
-- 手撕源码
-- 实现设计模式，算法
-
 ## 进行中
-- 瑞吉外卖
+
+- Tomcat
+
 ## [基础路线](https://gitee.com/liyupi/code-roadmap/blob/main/docs/roadmap/Java%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF.md)
 
 [AlibabaJava技术图谱](https://developer.aliyun.com/graph/java)
@@ -23,7 +20,6 @@
 >> 巩固
 
 - 1. mysql 经典练习50题（已完成）
-- 2. [Spring5 精讲](https://pan.baidu.com/s/1Z8csgq4phdUtqkwq81fqMg )  百度网盘中已存放资源
 - 3. Redis深入-常见内存穿透等问题处理办法（已完成）
 - 4. 力扣SQL入门练习题（已完成）
 - 
@@ -39,7 +35,13 @@
 ## 练手得项目
 
 - 1.博客系统（已完成）
-- 2.瑞吉外卖（进行中）
+- 2.瑞吉外卖（已完成）
+
+## 进阶
+
+- 手写框架
+- 手撕源码
+- 实现设计模式，算法
 
 ## 代办
 
@@ -56,7 +58,6 @@
 4. [学习roadmap](https://luxian.yupi.icu/#/roadmap/Java%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF?id=%e9%98%b6%e6%ae%b5-5%ef%bc%9a%e9%a1%b9%e7%9b%ae%e5%ae%9e%e6%88%98)
 
 ## 其他资源阅读
-
 
 1. [Spring5](https://www.bilibili.com/video/BV1Vf4y127N5)
 2. [MyBatis](https://www.bilibili.com/video/BV1mW411M737)
