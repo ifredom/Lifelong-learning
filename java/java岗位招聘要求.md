@@ -12,7 +12,7 @@
 3. 熟悉主流数据库（MySQL），熟悉常见SQL优化技巧，拥有较好的数据库设计能力；
 4. 熟悉Spring，SpringMVC, SpringBoot，Mybatis等主流开源框架；
 5. 熟悉Tomcat、WebLogic、JBoss等应用服务器其中一种；
-5. 熟悉redis，MQ 等中间件；
+5. 熟悉redis，postgreSQL,MQ 等中间件；
 6. 了解Kakfa,Zookeeper,es(大数据) NoSQL等中间件；
 
 
@@ -30,7 +30,7 @@
 
 ## 招聘
 
-1-3
+1-3经验
 
 3、必须有后端spring、java开发背景；熟练使用java，熟悉spring框架。
 4、沟通表达能力良好；
