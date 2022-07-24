@@ -6,7 +6,6 @@
 
 ## 进行中
 
-- Tomcat
 - Redis6
 
 ## 基础路线
@@ -27,6 +26,7 @@
 - 3. Redis深入-常见内存穿透等问题处理办法（已完成）
 - 4. 力扣SQL入门练习题（已完成）
 - 5. Redis 基本用法与封装 （已完成）
+- 6. Tomcat与Servlet了解与使用(已完成)
 
 ## 练手得项目
 
@@ -63,6 +63,8 @@
 - [Servlet（已完成）](https://www.bilibili.com/video/BV1Ga4y1Y7Ah?spm_id_from=333.999.0.0&vd_source=3c5672a416ac165826a145344ec5d29f)
 - [Redis6-尚硅谷](https://www.bilibili.com/video/BV1Rv41177Af?spm_id_from=333.999.0.0&vd_source=3c5672a416ac165826a145344ec5d29f)
 - [JVM虚拟机基础](https://www.bilibili.com/video/BV1PJ411n7xZ?spm_id_from=333.999.0.0&vd_source=3c5672a416ac165826a145344ec5d29f)
+- [PostgreSQL](https://www.bilibili.com/video/BV18u411S7xC?spm_id_from=333.337.search-card.all.click&vd_source=3c5672a416ac165826a145344ec5d29f)
+- [Netty](https://www.bilibili.com/video/BV1DJ411m7NR?spm_id_from=333.999.0.0&vd_source=3c5672a416ac165826a145344ec5d29f)
 
 ### 系统学习
 
